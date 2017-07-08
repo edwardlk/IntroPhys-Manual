@@ -1,0 +1,126 @@
+\chapter{Quantifying Motion from Images and Videos}
+\thispagestyle{fancy}
+\fancyhead[RE,LO]{Experiment \thechapter}
+%
+\section{Analysis of the 1-D motion of an amoeba using Excel and ImageJ.}
+This is the first week of a two-week lab studying cell motion.
+We will begin by doing some exercises to familiarize ourselves with the various tools available in ImageJ.
+These examples and more are provided by the NIH at their website \url{https://imagej.nih.gov/ij/docs/index.html}.
+We will then learn how to use Excel and ImageJ to analyze the 1-D motion of an amoeba from stop-motion images.
+\par
+%Next week we will be analyzing videos of cell motion—1) wound closure, 2) neutrophil motion, and 3) bacteria motion—to determine whether or not a patient should be prescribed antibiotics.
+%Clearly, the relative speeds of the wound closure, the neutrophils, and bacteria will affect your decision.
+%Thus it becomes important that we learn how to quantify the motion of cells.
+Your lab group has been provided with a copy of the movement of Dictyostelium discoideum.
+This motion is shown as a sequence of outlines of the amoeba cell at 3.0-minute intervals.
+From the outlines, your task is to record and analyze the motion of the amoeba — specifically, the position, instantaneous and average speed, and instantaneous and average acceleration.
+Rather than do all of the mathematical calculations by hand, Excel (or any spreadsheet program) can help you do the calculations much more quickly and efficiently.
+Today you will practice and master the skills necessary to bend Excel to your will and make it do the grunt work.
+After today, you will ALL be expected to be experts at these skills so take turns and help each other learn.
+Some of you may feel that you are already familiar with Excel; please READ Technical Document~\ref{chap:excel-analysis} anyway!
+It contains specific scientific norms that you need to learn.
+\par
+At the end of the lab today, you will submit a set of graphs (y vs.\ t, v vs.\ t, and a vs.\ t) with your data table and short paragraphs describing the relevant features and biological implications of each graph.
+These will be reviewed by the TA for completeness / accuracy / conventional structure.
+Good attention to detail now will save you time later!
+Remember, your TA is here to help you with equipment and Excel, but the physics is up to you and your group!
+(The bridge between the Physics and Excel is up to you, too!)
+\subsection{Introduction to ImageJ}
+\begin{enumerate}
+\item \emph{Optional:} Install ImageJ on your personal computer, following the steps provided in ``Installing ImageJ.docx''
+\item Review ``ImageJ Basics.pdf'' to familiarize yourself with all the tools available in the program.
+\item Open the file ``\textit{Area Measurements and Particle Counting.pdf}.''
+\item Follow the steps listed in the document.
+\item Save the measurements that you obtain so that you can hand them in at the end of class.
+\end{enumerate}
+
+\subsection{Amoeba Motion Analysis}
+\begin{enumerate}
+\item Use ImageJ to open the file ``\textit{amoeba.png}.''
+%\item \textit{Optional:} Adjust the origin of the graph.
+%Use the ``Point'' tool to find the x and y pixels of the origin, and input those values into the origin box under ``Image $>$ Properties.''
+\item Set the scale of the image using the y-axis.
+\item Use the ``Point'' tool to determine the y-position of the amoeba at each point.
+You can measure each position with Ctrl+M and then transfer the list of measurements to Excel by right-clicking the list of measurements.
+\item Using your y-position measurements and the given imaging interval, calculate the velocity and the acceleration of the amoeba at each point. 
+\end{enumerate}
+
+\paragraph{ Summary of Results:}
+\begin{itemize}
+\item Measurements from the ImageJ example (leaf total area \& green area, particle statistics)
+\item Three graphs, showing the position, velocity (both instantaneous \& average), and acceleration (both instantaneous \& average) of the amoeba as a function of time.
+\end{itemize}
+
+\section{Analysis of cell motion using ImageJ.}
+This is the second week of a two-week lab studying cell motion.
+Last week we learned how to use Excel to analyze the 1-D motion of an amoeba.
+This week we will be learning how to use ImageJ to analyze videos of cell motion.
+The Scenario: A patient has a wound, in the process of healing, that is infected with bacteria.
+Will the patient need antibiotics?
+To explore this scenario, you will be analyzing videos of: 1) wound healing, 2) neutrophil motion, and 3) bacteria motion.
+Clearly, the relative speeds of the wound healing, the neutrophils, and bacteria will affect your decision.
+Thus it becomes important that we learn how to quantify the motion of cells and to analyze videos. 
+\par
+Your lab group has been provided with six video files — a long and a shorter version of
+each of the three processes, wound healing, neutrophil motion, and bacteria motion.
+Each video is a sequence of images called ‘frames.'
+Taken together, each video is an ‘image sequence' or ‘stack.'
+The wound healing videos, ‘WoundHealing,' show breast tissue cell sheet migration.
+The ‘Neutrophils' videos show white blood cells responding to six different concentrations of fMLP—the chemical indicator of bacteria.
+The bacteria videos show E.\ coli motion.
+By viewing the longer video files, you can begin to examine the qualitative aspects of our scenario.
+These videos are rich in detail but the files contain too much data to be analyzed in our limited lab time.
+From the shorter videos, your task is to perform a quantitative analysis, with ImageJ and Excel, of the rates of motion of these cells.
+This quantitative analysis should help you problem-solve within this scenario.
+Today you will practice and master the skills necessary to analyze motion using ImageJ.
+After today, you will ALL be expected to be experts at these skills, so take turns and help each other learn.
+Take notes for the future if you are worried that you will forget.
+
+\subsection{Analyzing a .avi Video}
+\begin{enumerate}
+\item Go to `File $>$ Import $>$ AVI...'.
+\item Select the video that you want to analyze, click OK on the `AVI Reader' window.
+\item Open the Manual Tracking plugin, found in `Plugins $>$ PHY2131 Plugins'.
+\item In the `Tracking' window that opens, set your options for manual particle tracking:
+	\begin{enumerate}
+	\item In `Parameters', set the time per frame in the `Time Interval' box. Set `x/y calibration' to the scale of your image. For the videos we are analyzing today, these parameters are listed on the next page.
+	\item An optional step is to check `Use centering correction?' in order to have Imagej track the darkest or lightest point nearest to the point you select on each frame. Set the `Centering option' to `Local maximum' for the brightest pixel and `Local minimum' for the darkest pixel [see the document \textit{Manual Tracking plugin documentation.pdf} for more information].
+	\item If you are using the centering correction and your features are small relative to the size of the pixels, you may want to reduce `Search square size for centering'.
+	\end{enumerate}
+\item Find a particle that you can easily track throughout the entire video.
+\item Select `Add track' in the tracking window to begin tracking your particle. Each time you click on the particle's location, the plugin will record the position and velocity of the particle and then move to the next frame. If your particle leaves the field of view before you reach the end of the video, click `End Track'.
+\item Have each member of the group track 2 particles from each video.
+\item After you are done tracking all your particles, copy and paste your data into excel
+\item Create a histogram of your velocity data using the histogram function in excel. If you are unfamiliar with this function, ask your TA and check out \url{https://support.microsoft.com/en-us/help/214269/how-to-use-the-histogram-tool-in-excel}.
+\end{enumerate}
+
+\paragraph{ Summary of Results:}
+\begin{itemize}
+\item A \textbf{qualitative} analysis of the following videos (long videos--large files):
+	\begin{itemize}
+	\item Wound Healing: WoundHealing.avi
+	\item White Blood Cells: Neutrophils.avi
+	\item Bacteria: E\_Coli.avi
+	\end{itemize}
+\item A \textbf{quantitative} analysis of 2 of the following videos:
+	\begin{itemize}
+	\item Wound Healing: WoundHealing\_25fps.avi; \textbf{All students analyze this.}
+		\begin{itemize}
+		\item Technical specifications of the video: $0.65 \, \mu$m/pixel, 6.0 min/frame.
+		\end{itemize}
+	\item White Blood Cells: Neutrophils\_25fps.avi; \textbf{Half of the groups analyze this.}
+		\begin{itemize}
+		\item Technical specifications of the video: $1.326 \, \mu$m/pixel, 7.2 sec/frame.
+		\end{itemize}
+	\item Bacteria: E\_Coli\_25fps.avi; \textbf{Half of the groups analyze this.}
+		\begin{itemize}
+		\item Technical specifications of the video: 6.41 nm/pixel, 0.050 sec/frame.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+%\par
+%At the end of the lab today, your group will submit one lab report.
+%This will be reviewed by the TA according to the Scientific Community Lab rubric.
+%Good attention to detail now will save you time later!
+%Remember, your TA is here to help you with equipment and ImageJ, but the physics is up to you and your group!

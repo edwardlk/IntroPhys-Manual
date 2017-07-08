@@ -1,0 +1,87 @@
+\chapter{How to use ImageJ}
+\thispagestyle{fancy}
+\fancyhead[RE,LO]{Technical Document \thechapter}
+\label{chap:imagej}
+
+\section{Basic ImageJ tasks}
+
+\subsection*{Opening an image}
+To open an image, either:
+\begin{itemize}
+\itemsep-0.3em
+\item Click `File $>$ Open', and then navigate to the image you wish to analyze.
+\item Drag and drop the image you wish to analyze onto the main ImageJ window.
+\end{itemize}
+To open a video file:
+\begin{itemize}
+\itemsep-0.3em
+\item Click `File $>$ Import $>$ AVI...'. Select the video you wish to import then click `Okay'.
+\item In the `AVI Reader' window that opens, select the `Convert to Grayscale' option, and click `Okay'.
+\end{itemize}
+After importing a video file, you may need to edit it in order to allow our tracking tool to properly follow different features.
+\begin{itemize}
+\itemsep-0.3em
+\item Once you have selected an appropriate area, highlight this area with the *Rectangle* selection tool, click on `Image $>$ Crop'. 
+This will delete the rest of the video, and leave only the relevant section. 
+If you want, you can use the zoom button (`Ctrl + ``+''') to make this selection a bit larger on your screen.
+\item Now that we have an appropriate video, we need to process it to the point of being black features on a white background, with limited noise. 
+The first step is set the threshold for the video, which basically takes all of the shades of gray in the video and turns it into black or white. 
+To do this:
+\begin{itemize}
+\item Click on `Image $>$ Adjust $>$ Threshold'. 
+\item In the menu that pops up, play with the sliders until the featrures you are investigating are displayed in black, but there is no black elsewhere in the video. 
+It should look similar to the screenshot. 
+\item Once you have achieved this, click on the apply button. 
+Apply the threshold to all of the frames of the video, but you don't have to calculate it each time, the first is enough. This should produce images similar to the one in the screenshot, with black spots on a white background.
+\end{itemize}
+\item You may notice that there are some little spots of noise around your images. 
+To fix this:
+\begin{itemize}
+\item Go to `Image $>$ Adjust $>$ Contrast'.
+\item Set the contrast tab all the way to the right.
+\item This should further separate the difference between black and white, leaving just the black spots of the beads
+\end{itemize}
+\end{itemize}
+\subsection*{Determining distance-to-pixel ratio in ImageJ}
+Once you have imported a file into ImageJ, you will need to determine the distance-to-pixel ratio for your video (this should be done separately for each image/video analyzed). 
+\begin{itemize}
+\itemsep-0.3em
+\item You will need to use the `line' tool (*Straight* tool, 5th from left end of icons in toolbar) in ImageJ.
+\item Click on the `line tool' icon of the ImageJ menu toolbar (it looks like a sloped line or a slanted fraction bar (/), and the bottom right corner has a downward-pointing black triangle). 
+\item Using this tool, click on one end of a `known length’ object hold down the mouse button, and drag the line across the `known length’ object to the other side. 
+\item Click `Analyze $>$ Set Scale...'. Edit `Known Distance' and `Unit of length'. Now that the scale is set, the rest of the measurements that you take will be reported in the entered units.
+\end{itemize}
+
+\section{How to use ImageJ automatic tracking}
+The main difference between manual and automatic tracking is the preliminary image processing that is required. 
+It takes longer to prepare each video for analysis, but automatic tracking makes it much easier to quickly track many particles. 
+Essentially, our goal will be to process our image sequence to the point where our particles appear as black spots on a white background.
+
+\subsection*{Gathering Data with the Automatic Tracking Plugin}
+Once you have processed your video, you can open the Automatic Tracking plugin. 
+The Automatic Tracking plugin allows you to collect horizontal (X) and vertical (Y) position coordinates for objects at different times within the video automatically by only describing the sizes of the objects you want to look at. 
+To activate the Automatic Tracking plugin:
+\begin{itemize}
+\itemsep-0.3em
+\item Click on `Plugins $>$ 2131\_Plugins $>$ MultiTracker'. A new window will appear. 
+\item Adjust the min and max size if necessary to exclude any noise in your video. 
+Because of the way we processed the image, the only objects in the video should be the beads we are looking at, so these parameters should work.
+\item If you would like a clearer idea of which bead is which, and where they move over time, you can select the Show Label/Path options.
+\end{itemize}
+
+\subsection*{Exporting the Automatic Tracking Data to Excel}
+When the data collection is finished, go to your data window and examine how many different particles were tracked for the video. 
+The columns of the resulting data table will just be the X and Y positions for each of the particles that the computer identifies.
+\begin{itemize}
+\itemsep-0.3em
+\item Make sure that you only use data for real beads displaying real random motion. 
+You can check this by identifying the object at each coordinate position in the result table. 
+If the computer recognized noise as a bead, make sure you exclude this from your analysis. 
+\item If a bead enters or leaves the screen, make sure you exclude this point as well. 
+\item If a bead is clearly stuck to the slide and not moving at all, you may want to consider excluding that data point. 
+\item Once you are sure that you have identified the beads in your results table, you can save your results into an excel file (Option 2 is best for this, as there will be MANY columns).
+\begin{itemize}
+\item Option 1: `Edit' $\rightarrow$ `Select All' $\rightarrow$ `Ctrl' + `C' to Copy $\rightarrow$ Paste into an Excel file (you must add the column titles yourself), or
+\item Option 2: `File' $\rightarrow$ `Save As...' $\rightarrow$ Name the file what you will and click `Save'. (It will save in Excel format with column titles.)
+\end{itemize}
+\end{itemize}

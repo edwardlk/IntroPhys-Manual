@@ -1,0 +1,138 @@
+\chapter{Measurement Error}
+\thispagestyle{fancy}
+\fancyhead[RE,LO]{Technical Document \thechapter}
+\label{chap:error}
+%
+When getting quantitative information from a measurement, we are interested not just in the value
+we obtain, but in how sure we are that the value we have measured is correct.
+There are many factors that can produce a shift or an uncertainty in a measurement – we could have a meter stick with the end chipped off, our dials can only be read to a certain number of significant figures so the next digit is uncertain, or the setup conditions for our experiment can't be arranged precisely. 
+In standard terminology these are referred to as ``errors'' – though this is a technical term that really means ``uncertainties.'' 
+There is no implication that there are any mistakes made in doing the experiment!
+Once we have a good estimate of how much uncertainty there is in our measurement, we estimate an error bar – a spread of values that says, ``We expect the odds are 2:1 that the actual value is inside this range.''
+\par
+Errors like our meter stick being chipped off and thus too short are called systematic errors. 
+They always shift the result in one specific direction and need special care to reduce them.
+Errors that arise from many small hard to control uncertainties (e.g. how well two fluids are mixed, how stable the temperature of the apparatus is, or whether the measurement is affected by building vibrations) are well studied mathematically and are referred to as random error, and these errors make the result bigger OR smaller in a RANDOM fashion. 
+One way to get a handle on this random error is to repeat the experiment a number of times, preparing it as similarly as you can, and see how much variation there is. 
+The statistical tools of mean (average) and standard deviation allow you to estimate both the average result and the error bar arising from random error.
+
+\section*{Mean, Standard Deviation, \& Standard Error}
+Given a number of measurements of the same event, the best estimate of the measurement is the mean of the values found,
+\[ x_{best} = \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_{i} \]
+where $n$ is the number of measurements.
+
+A useful way of characterizing the reliability of the measurements is to calculate the standard deviation,
+\[ \sigma = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n}(x_{i}-\bar{x})^{2}} \]
+The	significance of the standard deviation is that approximately 68\% of the measurements should lie within a range of $\sigma$ of the mean value.
+With this definition, we can now write down the uncertainty of each individual measurement as $x_{i} \pm \sigma$.
+
+The	mean of several measurements provides a better estimate of a quantity than a single measurement.
+This stems from the fact that the uncertainty in the mean is smaller than the uncertainty of each individual measurement.
+One can show that the uncertainty of the mean, also known as the standard error, is given by:
+\[ \sigma_{m} = \frac{\sigma}{\sqrt{n}} \]
+where $n$, again, is the number of measurements.
+
+Then, the manner in which we will write the result of a set of measurements is that the best estimate and its uncertainty may be written
+\[ x_{best} = \bar{x} \pm \sigma_{m} \]
+The standard deviation of the mean slowly decreases with increasing number of  measurements; however, to improve the precision by a factor of 10, the number of measurements has to be increased by a factor of 100, which is hard work to say the least.
+Thus, in practice, better precision is usually obtained by improving the experimental technique rather than just relying on an increased numbers of measurements.
+
+\section*{Propagation of Error}
+Often the measurement that we make is not the final answer we want. 
+We may have to take a measured value as input in a calculation and do calculations with it. 
+If there is uncertainty in the input numbers for our calculation, then there will be uncertainty in the output numbers as well – but they won't be the same uncertainty. 
+The input and output numbers likely even have different units!
+\par
+To figure out how an input uncertainty translates into an output uncertainty, we simply have to ask: if the input value changed, how would that affect the output? 
+We can answer that question by doing the calculation – changing the input value a little and calculating the changes in output. 
+But we can also use calculus: the derivative of a function (an output calculated from some input) tells you how that output changes if the input changes a little! 
+Mathematically these two options are written as follows:
+\begin{equation}
+\delta f = f(x + \delta x) - f(x)
+\end{equation}
+\begin{equation}
+f(x + \delta x) = f(x) + \delta x \frac{df}{dx}
+\end{equation}
+Therefore we can write:
+\begin{equation}
+\delta f = \delta x \frac{df}{dx}
+\end{equation}
+We use the lower case delta ($\delta$) to represent a small change, since some of our inputs are changes already. 
+
+\section*{General Form for Propagation of Error}
+Let $\delta$x be the known uncertainty in x and $\delta$y be the known uncertainty in y. 
+A function of x and y, such as f(x,y), will have two parts to its uncertainty — one contribution from x information and another contribution from y information. 
+The contributions to the uncertainty of f are found using the relationships below:
+\[ \delta f_{x} = \frac{df}{dx} \delta x \qquad \mathrm{and} \qquad \delta f_{y} = \frac{df}{dy} \delta y \]
+The total uncertainty in f, $\delta$f, can be found by using the relationship:
+\begin{equation}
+\delta f = \sqrt{(\delta f_{x})^{2}+(\delta f_{y})^{2}}
+\end{equation}
+
+\subsection*{Example 1: Average Velocity}
+If you know the uncertainty in $\Delta$x, $\delta$($\Delta$x), and the uncertainty in $\Delta$t, $\delta$($\Delta$t), then you can use the formula for average velocity, $\langle v \rangle = \frac{\Delta x}{\Delta t}$, to find the uncertainty in the average velocity, $ \delta (\langle v \rangle)$.
+\[ \delta \langle v \rangle_{\Delta x} = \frac{d \langle v \rangle}{d(\Delta x)} \delta (\Delta x)
+   \quad \rightarrow \quad \mathrm{compute \ derivative} \quad \rightarrow \quad
+   \delta \langle v \rangle_{\Delta x} = \frac{1}{\Delta t} \delta (\Delta x)\]
+%
+\[ \delta \langle v \rangle_{\Delta t} = \frac{d \langle v \rangle}{d(\Delta t)} \delta (\Delta t)
+   \quad \rightarrow \quad \mathrm{compute \ derivative} \quad \rightarrow \quad
+   \delta \langle v \rangle_{\Delta t} = \frac{-\Delta x}{\Delta t^{2}} \delta (\Delta t)\]
+%
+\[ \delta \langle v \rangle = \sqrt{(\delta \langle v \rangle_{\Delta x})^{2} 
+   + (\delta \langle v \rangle_{\Delta t})^{2}} = \sqrt{\left(\frac{1}{\Delta t} \delta (\Delta x)\right)^{2} + \left(\frac{-\Delta x}{\Delta t^{2}} \delta (\Delta t)\right)^{2}} \]
+
+\paragraph{For example,} let say that want calculate the average velocity of a air-track cart. Your track is 2 m long, and the error you estimate for your meter stick is 5 mm. You used a photogate system to measure the time it took for the cart to traverse the track; you measured a value of 4.0  with an error of 0.3 s. Thus, your average velocity would be 0.5 m/s, and your uncertainty would be:
+
+\[ \delta \langle v \rangle = \sqrt{ \left( \frac{1}{4.0 \, s} (0.005 \, m) \right)^{2} + \left( \frac{-2.0 \, m}{(4.0 \, s)^{2}} (0.3 \, s) \right)^{2}} = 0.038 \, m/s \]
+Thus, you would report the average velocity of your cart as $v = 0.5 \pm 0.038 \, m/s$
+
+\subsection*{Example 2: A Sinusoidal Function}
+Given a sinusoidal function $a = \sin(\omega t) + 2$ and uncertainties in $\omega$, $\delta \omega$, and in t, $\delta$t, the uncertainty in a, $\delta$a can be calculated as follows:
+ \[ \delta a_{\omega} = \frac{da}{d \omega} \delta \omega
+   \quad \rightarrow \quad \mathrm{compute \ derivative} \quad \rightarrow \quad
+   \delta a_{\omega} = t \cos(\omega t) \delta \omega \]
+%
+\[ \delta a_{t} = \frac{da}{dt} \delta t
+   \quad \rightarrow \quad \mathrm{compute \ derivative} \quad \rightarrow \quad
+   \delta a_{t} = \omega \cos(\omega t) \delta t \]
+%
+\[ \delta a = \sqrt{(\delta a_{\omega})^{2} + (\delta a_{t})^{2}} 
+   = \sqrt{\left( t \cos(\omega t) \delta \omega \right)^{2} + \left( \omega \cos(\omega t) \delta t \right)^{2}} \]
+   
+\section*{Why Propagate Error}
+We often hear students express the following frustrations: "What's the big deal with all of
+this error analysis, anyway? Is it just busy work? Is there a more significant, scientific purpose?
+Why are there so many ways to determine error??!?"
+\par
+\textbf{Error analysis is key to science and medicine.}
+The key question in medical research and medical practice is, whether a treatment works! 
+Does a new drug make a patient feel better or remove their disease better than another treatment? 
+To answer this question requires comparing observations before and after, or comparing treated patients with so called ``controls'' in clinical trials. 
+But how can we tell whether something is the same or different? 
+This is where error analysis comes in as a crucial stepping stone!
+\par
+We randomly chose an article on a medical topic (cancer therapy) from a recent issue of the prestigious journal Nature. 
+In all of the four figures included in the article, we saw that the authors, in trying to show that their therapy works, compared mice that were treated with their therapy to ``controls,'' i.e.\ untreated mice as shown in the sample image on the right. 
+To highlight a statistically significant difference it is customary to put a ``star'' in the figure. 
+In this figure you see two stars showing that the two images on the left are different, and the two images on the right are different. 
+But how would you determine that the two x-ray images are different? 
+Use error analysis and error propagation! 
+In this example the input data are x-ray images, which have uncertainty from mouse to mouse and from x-ray exposure to x-ray exposure. 
+The output, which is what the authors want to compare, are ``tumor to background ratios.''
+\par 
+\textbf{Our take home message:} Error analysis is the hidden backbone of scientific research. 
+It may only show up as small stars in an otherwise glossy image, but without that star the authors could not draw any conclusion from these images other than ``each mouse has a somewhat different number of tumors.'' 
+Overall we counted 38 ``stars'' in the article that analyzed the effectiveness of one particular therapy! 
+\textbf{We want you to become Stars of Error analysis!}
+\par 
+\textbf{There ARE a lot of ways to do error analysis.} 
+Part of what you are learning to do, as budding scientists and doctors, is to find a way to choose the method of error analysis that best matches the experimental design/protocol. 
+There is no single `formula' for error analysis, just as there is no single `formula' for doing science! 
+Here are some error analysis methods that you will encounter in this class:
+\begin{itemize}
+\itemsep-0.3em
+\item determine uncertainties in individual measurements and propagate error to find the output error (as described in this document); or,
+\item calculate the output for each input from the multiple trials and use the standard deviation of the output to establish the uncertainty of the output directly.
+\item (There ARE other methods, but these are the most commonly used....)
+\end{itemize}

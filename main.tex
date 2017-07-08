@@ -1,0 +1,122 @@
+\documentclass[hidelinks,12pt,letterpaper,twoside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{titletoc}% http://ctan.org/pkg/titletoc
+\usepackage{afterpage}
+\usepackage{tocloft}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+
+\graphicspath{ {./images/} }
+
+\renewcommand{\arraystretch}{1.5}
+
+\setlength{\headheight}{110pt}
+
+\makeatletter
+\@addtoreset{chapter}{part}
+\makeatother  
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    %\addtocounter{page}{-1}%
+    \newpage}
+
+\author{WSU Physics \& Astronomy}
+\title{2131 Lab Manual}
+
+\geometry{margin=1in}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{Physics 2131 Lab Manual}
+\fancyhead[RE,LO]{Lab \thechapter}
+\fancyfoot[LE,RO]{\thepage}
+
+\tocloftpagestyle{fancy}
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.25\textwidth]{wsu_logo}\par\vspace{1cm}
+	%{\scshape\LARGE Physics 2131 \par}
+	%\vspace{0.5cm}
+	%{\scshape\large Physics for the Life Sciences\par}
+	{\scshape\LARGE Physics for the Life Sciences \par}	
+	\vfill
+	\textbf{\huge Lab Manual} \par
+	\vfill
+% Bottom of the page
+	{\scshape\large Spring/Summer 2017 \par}
+%	{\scshape\large \today \par}
+\end{titlepage}
+
+\newpage{\blankpage}
+
+\include{intro}
+
+\newpage{\blankpage}
+
+\fancyhead[RE,LO]{Table of Contents}
+\renewcommand\contentsname{Physics for the Life Sciences}
+\setcounter{tocdepth}{1}
+\tableofcontents{\thispagestyle{fancy}}
+
+%\newpage{\blankpage}
+
+\part{2131 Experiments}
+\renewcommand{\chaptername}{Experiment}
+\include{lab01}
+%\newpage{\blankpage}
+\include{lab02}
+%\newpage{\blankpage}
+\include{lab03}
+\newpage{\blankpage}
+\include{lab04}
+%\newpage{\blankpage}
+\include{lab05}
+%\newpage{\blankpage}
+
+\part{2141 Experiments}
+%\renewcommand{\chaptername}{Experiment}
+\setcounter{chapter}{5}
+\include{lab06}
+\newpage{\blankpage}
+\include{lab07}
+%\newpage{\blankpage}
+\include{lab08}
+%\newpage{\blankpage}
+\include{lab09}
+%\newpage{\blankpage}
+\include{lab10}
+%\newpage{\blankpage}
+\include{lab11}
+%\newpage{\blankpage}
+
+\part{Technical Documents}
+\renewcommand{\chaptername}{Technical Document}
+\renewcommand\thechapter{\Alph{chapter}}
+%\include{imagej_intro}		%A
+%\newpage{\blankpage}
+\include{excel_analysis}	%\ref{chap:excel-analysis}
+\newpage{\blankpage}
+\include{excel_hist}		%\ref{chap:excel-hist}
+\newpage{\blankpage}
+\include{error_prop}		%\ref{chap:error}
+\newpage{\blankpage}
+\include{imagej_autotrack}	%\ref{chap:imagej}
+\newpage{\blankpage}
+\include{video_capture}		%\ref{chap:vid-cap}
+%\newpage{\blankpage}
+\include{scope_basics}		%\ref{chap:scope-basic}
+\newpage{\blankpage}
+\include{log-log}			%\ref{chap:log-plots}
+
+\end{document}

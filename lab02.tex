@@ -1,0 +1,129 @@
+\chapter{Inferring Force Characteristics from Motion Analysis}
+\thispagestyle{fancy}
+\fancyhead[RE,LO]{Experiment \thechapter}
+%
+This is the first week of a two-week lab sequence designed to introduce you to video capture and analysis of directed motion and resistive forces.
+Your task is to collect video data using VirtualDub and ImageJ to understand the effect that a particular parameter of the system has on terminal velocity.
+Next week you will analyze the data of other groups in your class and try to determine how resistive forces scale with respect to the varied quantities.
+%In the first investigation, you will be asked to analyze the directed motion of different spheres falling through fluid (one concentration of glycerol).
+%(You are investigating how resistive forces and terminal velocity scale with the mass/size of the falling object.)
+%In the second investigation, you will analyze the directed motion of one sphere falling through different fluids (different concentrations of glycerol).
+%(You are investigating how resistive forces and terminal velocity scale with the viscosity of the fluid.)
+%Make sure that all students are using the same size sphere in the second investigation.
+%The lab handout will give explicit instructions on video capture, but no guidance on the performance of the experiments or attainment of the physics skill goals. 
+\par
+Why do we care about resistive forces and directed motion?
+The resistive effect of air (on macroscopic organisms) and fluids (on both macroscopic and microscopic organisms) cannot always be ignored.
+For example, the fluid resistance on a bacterium (or on a cell) requires that the bacterium exert a force to overcome this resistance and change its motion.
+These resistive forces can be affected by the size and mass of an object and by the characteristics of the medium creating the resistive force.
+You will learn more about this in the upcoming lectures, readings, and recitation.
+%Pay attention, as you will need these theoretical ideas to do your data analysis next week. 
+\par 
+First, you will practice and master the skills necessary to capture and edit your own videos for analysis in ImageJ.
+It is advised that you carry out one investigation from beginning to end (video capture, video editing, \& imageJ analysis) before you capture the rest of your videos.
+After today, you will ALL be expected to be experts at these skills so take turns and help each other learn.
+Take notes for the future if you are worried that you will forget.
+
+\paragraph{For this two week lab:} Your overall task for the next two weeks is to measure the terminal velocity of spheres falling through fluid and determine how the variation of experimental parameters (such as sphere mass and size, and the fluid viscosity) impacts the movement of the spheres.
+You will do this in multiple stages:
+\begin{enumerate}
+\itemsep-0.2em
+\item Make sure you understand how to operate the camera and how to capture video with VirtualDub.
+\item Capture your first video according to table~\ref{tab:exp2video} and begin to analyze it.
+\item Discuss as a class the method you plan to use to analyze your videos
+\item Collect the rest of your videos.
+\item Analyze each video and determine the terminal velocity.
+\item Look at all the data collected by your classmates to determine how the variation of parameters affects terminal velocity.
+\end{enumerate}
+
+\section{Analysis of Directed Motion and Resistive Forces}
+Begin by looking over table~\ref{tab:exp2video} to determine which parameter you will be investigating.
+If another group is investigating the same parameter, meet with them before you begin so that you can investigate complimentary parameters (e.g., if two groups are investigating the effect of the ball's radius, one may want to use a low viscosity fluid while the other uses a high viscosity fluid).
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|p{10cm}|}
+\hline
+ \textbf{Group \#} & \textbf{Parameter} & \textbf{Investigation} \\ \hline
+% &  &  \\ \hline
+ \textbf{1 \& 2} & Object Radius & Capture 3 videos using the steel spheres. \\ \hline
+ \textbf{3 \& 4} & Object Density & Capture 3 videos using the spheres made of different materials. \\ \hline
+ \textbf{5 \& 6} & Fluid Viscosity & Capture 3 videos of the same sphere falling 3 different fluids. \\ \hline
+\end{tabular}
+\caption{Video Summary}
+\label{tab:exp2video}
+\end{table}
+
+\subsection*{*Important Note on Video Capturing*}
+Recording high quality videos using the methods detailed below can result in very large video files. Capturing one 30-second video can create a file as large as \emph{1.5 GB}; if we are not careful about the amount of video that is being captured, we can quickly overfill the hard drive and crash the computer. Therefore, it is important that you follow the steps as they are listed below. Setting the stop conditions in step 5 ensures that in case you forget to end the video capture, the program would stop capturing on its own. In step 3, you are asked to use a common file to store the videos that you capture. Occasionally, the TAs will need to delete all the videos in this folder to make room on the hard drive. Therefore, it is important to edit the videos that you capture to save only the frames that contain data you plan on analyzing, and then save these smaller video files to your group folder. Please check with your TA if you are unsure about how to do this.
+
+\subsection{Capturing a .avi Video}
+\begin{enumerate}
+\item The program that we will be using to capture videos for analysis is called `VirtualDub', a shortcut to it can be found on the desktop. After double-clicking the shortcut, a video editing-editing window opens. Navigate to `File $>$ Capture AVI...' to get the program into capture mode.
+\item Click `Device $>$ Microsoft LifeCam Studio(TM) (DirectShow)' to show the output from the camera. If you are not getting an image, ask your TA for help (sometimes shutting off the program, unplugging then re-plugging in the camera, and then restarting the program works).
+\item Go to `File $>$ Set capture file...' , choose the folder `VirtualDub captures', and choose a file names for the videos you capture. Good file names end with numbers the program can increment, so use something like `GroupName-lab2-001' as your file name.
+\item Uncheck `Audio $>$ Enable audio capture'.
+\item Navigate to `Capture' and make sure the following settings are correct:
+\begin{itemize}
+	\item `Stop conditions...': check the box next to `capture time exceeds 30 seconds'. Click Accept.
+	\item `Disk I/O...': set `Chunk Size' to 2 MB and `Chunks in buffer' to 20. Click Accept.
+	\item Check `Autoincrement filename after capture'.
+\end{itemize}
+\item Now you are ready to begin capturing your videos. Align all the parts of your experiment and then either click `Capture $>$ Capture video' or press `F6'. To stop a capture, press `Esc'.
+\end{enumerate}
+
+\section{Error propagation and analysis of directed motion \& resistive forces}
+%This is the second week of a two-week lab sequence designed to introduce you to error propagation and analysis of directed motion and resistive forces.
+%In the first week, you collected video data using ImageJ for two separate investigations.
+%In the first investigation, you gathered data investigating how resistive forces and terminal velocity scale with the mass of the falling object.
+%In the second investigation, you gathered data investigating how resistive forces and terminal velocity scale with the viscosity of the fluid.
+This week you will collect and analyze the rest of your data and try to determine how the terminal velocities scale with respect to the varied quantities.
+%The lab handout will give explicit instructions on error propagation, but no guidance in the performance of the physics skill goals. \par
+In table~\ref{tab:viscosity} you will find information detailing the viscosity of the percent glycerin solutions available to you for this experiment.
+Other possibly helpful information is available from your TA — if there is information (physical data) that you think you will need, don't hesitate to ask — but you have to know what you are asking for! \par
+At the end of the lab today, your group will submit one lab report.
+This will be reviewed by the TA according to the rubric listed in the syllabus.
+Good attention to detail now will save you time later!
+Remember, your TA is here to help you with equipment, error propagation, and ImageJ, but the physics is up to you and your group!
+
+\paragraph{Things you might consider including in your report:}
+(These are not necessarily required. You and your group should consider what INFORMATION is necessary to SUPPORT the CLAIMS that you are making!)
+\begin{itemize}
+\item Plots of y vs. t OR v vs. t for each video (Do you need both plots for each video?).
+\item Data tables with terminal velocity, terminal velocity squared, mass, radius, or viscosity.
+%\item Data table for terminal velocity and viscosity for investigation two.
+\item Plots of terminal velocity vs. your parameter and/or terminal velocity squared vs. your parameter. (Do you need both graphs?)
+\item Consider discussing the following questions:
+	\begin{itemize}
+	\item What is the terminal velocity for each video? How certain is this value?
+	\item How do the different terminal velocities for each investigation fit together to describe the resistive force?
+	\item For the 2nd investigation, how does terminal velocity scale with viscosity?
+	\end{itemize}
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}l|ccccccc@{}}
+\toprule
+Percent Glycerin          & 0\%    & 30\%   & 40\%   & 50\%   & 60\%   & 70\%   & 80\%   \\ \midrule
+Dynamic Viscosity ($Ns/m^{2}$) & 0.0009 & 0.0026 & 0.0041 & 0.0070 & 0.0132 & 0.0278 & 0.4346 \\ \bottomrule
+\end{tabular}%
+}
+\caption{Viscosity of glycerin concentrations by \% volume}
+\label{tab:viscosity}
+\end{table}
+
+%\paragraph{Summary of Results:\\} 
+%Before you begin writing up your lab report, you should have collected the following data:
+%\begin{itemize}
+%\item Videos of three or more different spheres falling through water.
+%\item Videos of one sphere falling through three or more different glycerol concentrations.
+%\end{itemize}
+%
+%\paragraph{Summary of Results:}
+%\begin{itemize}
+%\item A graph showing the position of each sphere as a function of time.
+%\item A graph showing the position of the sphere in each fluid as a function of time.
+%\item From the graphs, determine the average acceleration of each sphere.
+%\end{itemize}

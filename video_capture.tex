@@ -1,0 +1,56 @@
+\chapter{Introduction to Video Capture}
+\thispagestyle{fancy}
+\fancyhead[RE,LO]{Technical Document \thechapter}
+\label{chap:vid-cap}
+
+\section*{Finding the software on the lab computer}
+The software should be clearly available on the desktop. 
+If it is not, go to the start menu and type `virtual' into the Search Programs and Files box. 
+The software you want is called `VirtualDub' and has an icon that looks like a gray gear-and-screw. 
+Open this.
+
+\section*{Capturing video with the webcam}
+\begin{itemize}
+\itemsep-0.3em
+\item The fist window that opens is for editing videos. Select `File $>$ Capture AVI' to open the video capture window.
+\item If both a webcam and a microscope are connected to your computer, you may need to select the device. 
+Select `Device,' and `Microsoft LifeCam Studio (TM) (DirectShow)' for the webcam or the `Toupcam (DirectShow)' option for the microscope.
+\item If you do not see the output from the camera showing in the window, make sure that `Video $>$ Preview' is checked.
+\item There are a number of settings that you can investigate to change aspects of the video you wish to capture.
+Your lab station will have a guide with more information about recommended settings to use, what settings you may need to adjust, and what settings should not be changed.
+\item Be aware that ImageJ can process only about 400 frames (due to the limited working memory of the computer, more frames possible with the virtual stack option), so you will need to adjust the play rate and total time of your video to take the minimum length to capture your event and not much else. This can be done very easily in the VirtualDub editing window.
+\item Check the save location, file name, and auto-increment settings so that you don't lose any data and avoid writing over anyone else's data.
+\item When you are ready to capture video of motion/your subject, select `Capture video' or press F6. Once your experiment is complete, click `Stop Capture' or press `Esc' to stop recording.
+\item Keep in mind, you may need to collect several trial videos before you manage to get good video for analysis in ImageJ.
+\end{itemize}
+
+\section*{Editing captured videos}
+As mentioned before, it is often a good idea to edit your videos after capturing them.
+Even short captures can result in large file sizes, so in order to expedite the analysis of your videos and to reduce the amount of space you need to store your data you shoulds edit your videos after you are done capturing your data.
+Fortunately, VirtualDub's video editing software is a very simple to use.
+\begin{itemize}
+\itemsep-0.3em
+\item Go to `File $>$ Open video file...' and select the file you want to edit.
+\item Use the left and right arrow keys to scroll through the video frame-by-frame; locate the are that you plan on analyzing.
+\item Navigate to a frame a few before the ones that contain your data. Click the `End' key to select all of the opening video that you wish to delete, then click the `Delete' key to remove it.
+\item Don't worry if you make a mistake, nothing is saved until you click `File $>$ Save as AVI...'. If you accidentally erase the wrong frames, select `File $>$ Close video file' and then start again from the beginning.
+\item If there is any video you wish to remove from the end of your file, move to a few frames after your data and click the `Home' key, then move to the end of the video and click the `End' key, then click `Delete'.
+\item Once you have deleted the majority of the unnecessary frames, select `File $>$ Save as AVI...' to save your edited video. Note that you cannot use the same filename as the video you currently have open.
+\end{itemize}
+
+\section*{Video construction \& planning}
+Creating a good video for analysis in ImageJ is tougher than you might think. 
+You will need to consider elements of video construction and planning. 
+You need to be a ‘Good Cinematographer.’ 
+Here are some questions to consider:
+\begin{itemize}
+\itemsep-0.3em
+\item What is the best angle? How should the camera be aligned to view the motion of the object
+in which you are interested?
+\item What is the best time between frames? How many frames-per-second should you be collecting, given the time for the phenomena to occur and the memory limitations of ImageJ (about 400 frames)?
+\item Is there a known length visible in the video?
+\item Are all objects of interest clearly visible in the video?
+\item Is the entire portion of motion in which we are interested visible in the video?
+\item Is the camera (perspective) stationary?
+\end{itemize}
+

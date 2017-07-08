@@ -1,0 +1,74 @@
+\chapter{Exploring Fluid Dynamics and the Hagen-Poiseuille (H-P) Equation}
+\thispagestyle{fancy}
+\fancyhead[RE,LO]{Experiment \thechapter}
+%
+In this lab we will be analyzing video data gathered previously, using the microscopes, for
+fluid flow in two different microfluidic devices.
+These microfluidic devices serve as excellent models for fluid flow in biological systems.
+By analyzing flow videos in ImageJ, we can explore the effect of device geometry on the velocity, $v$, of the beads in the fluid.
+The beads serve as ``tracers'' and tell us how fast the fluid itself is moving.
+You will be qualitatively analyzing both devices (see diagram below) and quantitatively analyzing videos from one of these devices.
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{micro-devices.png}
+	\caption{Microfluidic channels in series (A) and in parallel (B).}
+	\label{fig:series-parallel}
+\end{figure}
+
+Both of the devices consist of two channels connected to each other.
+In Device A, the wide and narrow channels are connected in sequence.
+In Device B, the wide and narrow channels are next to each other, but both fed from the same inlet and outlet.
+In other words, the channels of Device A are in ``Series'' and the channels of Device B are in ``Parallel.''
+In these devices, the width, $d$, of the wide channel (6.0 mm) is twice the width of the narrow channel (3.0 mm), and the lengths and depths (not shown in the top view) of the wide and narrow channels on each slide are equivalent.
+To drive the fluid through the devices, the video makers used a plunger syringe and applied a force to the plunger that was as steady and repeatable as possible.
+\newpage
+As the fluid (containing 5 $\mu$m beads) flows from the left side to the right side of the
+microfluidic devices, the volumetric flow rate of the fluid, $Q = v*A$, will be governed by the HagenPoiseuille (H-P) equation:
+\[ \Delta P \propto \left( \frac{\mu L}{A^{2}} \right) Q \]
+where $L$ is the length of the channel, $\mu$ is the viscosity of the fluid, $A$ is the area of the channel ($A = d*depth$), and $\Delta P$ is the change in pressure between the ends of a channel.
+
+\paragraph{For this two week lab:} Your overall task for the next two weeks is to use ImageJ to measure the motion of microbeads as they travel through various microfluidic devices.
+\begin{enumerate}
+\itemsep-0.2em
+\item Qualitatively analyze your videos and use the descriptions of the motion in your report.
+\item Make sure that you understand how to use ImageJ to analyze video.
+\item Measure the motion of at least ten particles in each of the videos.
+\end{enumerate}
+
+\section*{Part 1: Qualitative Analysis}
+To start your investigation (\emph{before} you begin analyzing videos), look at the motion of the
+beads \emph{both} for the slide of channels in Series (Device A) \emph{and} for the slide of channels in Parallel (Device B).
+These videos are on your computer.
+For each device:
+\begin{itemize}
+\itemsep-0.2em
+\item is the motion faster in the wide channel or in the narrow channel, and
+\item is the pressure drop higher in the narrow or wide channel?
+\item Does this pattern match for the two devices? Why or why not?
+\end{itemize}
+Qualitatively describe what you see and justify/explain why you are seeing what you are seeing using the H-P equation.
+Consider what biological systems might be modeled using the Series and Parallel devices.
+This portion of the lab may take you 30 minutes or more.
+Be thorough!
+
+\section*{Part 2: Quantitative Analysis}
+For one of these devices, analyze the videos of the motion of the beads in both the wide and
+the narrow channels.
+(These videos were collected using a 40x optic and a medium-level resolution (1024 pixels).
+The frame rate for each video is in the file name.)
+Do a quantitative analysis of these videos using ImageJ and Excel to investigate the relationship between the relative widths, $d$, of the channels and the relative velocities, $v$, of the beads in those channels.
+If you are unfamiliar with these tools, read Technical~Documents~\ref{chap:excel-analysis} and \ref{chap:imagej}.
+%\par
+%Working together with a lab group that analyzed the other device, make sense of your collective data.
+%Compare your answers to the questions in the previous paragraph and consider how to answer these questions with respect to the entire data set.
+%Professional scientists often make use of data collected and analyzed by their peers in order to further their own investigations.
+%What are some of the factors limiting the adaptation and use of data you have not collected for yourself?
+\paragraph*{Things you might consider including in your lab report:} In addition to the standard lab report, be sure to include a thorough discussion of both the qualitative and quantitative analyses of the motion of the beads through the microfluidic devices.
+For both flow geometries, discuss a possible biological or medical consequence of the H-P equation.
+Some other questions you may want to consider:
+\begin{itemize}
+\item Is the H-P equation a good description of the relationship between $d$ and $v$? Why or why not?
+\item What assumptions are you making in our data collection and analysis? What assumptions are you making in comparing your results to the H-P equation? Are these assumptions valid?
+\item Do you have enough information to calculate the depth of the channel? If not, what other information would you need to complete the depth calculation? Explain your reasoning.
+\end{itemize}
