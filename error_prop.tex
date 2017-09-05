@@ -51,11 +51,11 @@ Mathematically these two options are written as follows:
 \delta f = f(x + \delta x) - f(x)
 \end{equation}
 \begin{equation}
-f(x + \delta x) = f(x) + \delta x \frac{df}{dx}
+f(x + \delta x) = f(x) + \delta x \frac{\partial f}{\partial x}
 \end{equation}
 Therefore we can write:
 \begin{equation}
-\delta f = \delta x \frac{df}{dx}
+\delta f = \delta x \frac{\partial f}{\partial x}
 \end{equation}
 We use the lower case delta ($\delta$) to represent a small change, since some of our inputs are changes already. 
 
@@ -63,7 +63,7 @@ We use the lower case delta ($\delta$) to represent a small change, since some o
 Let $\delta$x be the known uncertainty in x and $\delta$y be the known uncertainty in y. 
 A function of x and y, such as f(x,y), will have two parts to its uncertainty — one contribution from x information and another contribution from y information. 
 The contributions to the uncertainty of f are found using the relationships below:
-\[ \delta f_{x} = \frac{df}{dx} \delta x \qquad \mathrm{and} \qquad \delta f_{y} = \frac{df}{dy} \delta y \]
+\[ \delta f_{x} = \frac{\partial f}{\partial x} \delta x \qquad \mathrm{and} \qquad \delta f_{y} = \frac{\partial f}{\partial y} \delta y \]
 The total uncertainty in f, $\delta$f, can be found by using the relationship:
 \begin{equation}
 \delta f = \sqrt{(\delta f_{x})^{2}+(\delta f_{y})^{2}}
@@ -71,11 +71,11 @@ The total uncertainty in f, $\delta$f, can be found by using the relationship:
 
 \subsection*{Example 1: Average Velocity}
 If you know the uncertainty in $\Delta$x, $\delta$($\Delta$x), and the uncertainty in $\Delta$t, $\delta$($\Delta$t), then you can use the formula for average velocity, $\langle v \rangle = \frac{\Delta x}{\Delta t}$, to find the uncertainty in the average velocity, $ \delta (\langle v \rangle)$.
-\[ \delta \langle v \rangle_{\Delta x} = \frac{d \langle v \rangle}{d(\Delta x)} \delta (\Delta x)
+\[ \delta \langle v \rangle_{\Delta x} = \frac{\partial \langle v \rangle}{\partial (\Delta x)} \delta (\Delta x)
    \quad \rightarrow \quad \mathrm{compute \ derivative} \quad \rightarrow \quad
    \delta \langle v \rangle_{\Delta x} = \frac{1}{\Delta t} \delta (\Delta x)\]
 %
-\[ \delta \langle v \rangle_{\Delta t} = \frac{d \langle v \rangle}{d(\Delta t)} \delta (\Delta t)
+\[ \delta \langle v \rangle_{\Delta t} = \frac{\partial \langle v \rangle}{\partial (\Delta t)} \delta (\Delta t)
    \quad \rightarrow \quad \mathrm{compute \ derivative} \quad \rightarrow \quad
    \delta \langle v \rangle_{\Delta t} = \frac{-\Delta x}{\Delta t^{2}} \delta (\Delta t)\]
 %
@@ -89,11 +89,11 @@ Thus, you would report the average velocity of your cart as $v = 0.5 \pm 0.038 \
 
 \subsection*{Example 2: A Sinusoidal Function}
 Given a sinusoidal function $a = \sin(\omega t) + 2$ and uncertainties in $\omega$, $\delta \omega$, and in t, $\delta$t, the uncertainty in a, $\delta$a can be calculated as follows:
- \[ \delta a_{\omega} = \frac{da}{d \omega} \delta \omega
+ \[ \delta a_{\omega} = \frac{\partial a}{\partial \omega} \delta \omega
    \quad \rightarrow \quad \mathrm{compute \ derivative} \quad \rightarrow \quad
    \delta a_{\omega} = t \cos(\omega t) \delta \omega \]
 %
-\[ \delta a_{t} = \frac{da}{dt} \delta t
+\[ \delta a_{t} = \frac{\partial a}{\partial t} \delta t
    \quad \rightarrow \quad \mathrm{compute \ derivative} \quad \rightarrow \quad
    \delta a_{t} = \omega \cos(\omega t) \delta t \]
 %
